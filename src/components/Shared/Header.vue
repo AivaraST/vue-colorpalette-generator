@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
     header {
-        padding: 150px 0;
+        padding: 100px 0;
     }
 
     h1 {

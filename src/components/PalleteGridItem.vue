@@ -25,7 +25,6 @@ export default {
   },
   methods: {
     copyClipboard() {
-      console.log(this.color);
       EventBus.$emit('showNotification', this.color);
     },
   },
@@ -34,7 +33,7 @@ export default {
 
 <style lang="scss">
     .color-grid-item {
-        padding: 0 10px;
+        padding: 10px 10px;
         width: 20%;
         transition: 0.5s transform ease-in-out;
 
@@ -63,5 +62,17 @@ export default {
         display: block;
         text-align: center;
         padding: 10px 0;
+    }
+
+    @media only screen and (max-width: 968px) {
+      .color-grid-item {
+        width: 50%;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .color-grid-item {
+        width: 100%;
+      }
     }
 </style>

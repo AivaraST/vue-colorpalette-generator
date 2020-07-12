@@ -1,8 +1,8 @@
 <template>
     <div class="color-grid">
       <PalleteGridItem
-      v-for="color in colors"
-      :key="color"
+      v-for="(color, index) in colors"
+      :key="index"
       :color="color">
       </PalleteGridItem>
     </div>
@@ -16,17 +16,13 @@ export default {
   components: {
     PalleteGridItem,
   },
-  methods: {
-    lmoa() {
-      return console.log(this.colors);
-    },
-  },
 };
 </script>
 
-<style>
+<style lang="scss">
     .color-grid {
-        padding: 100px 0;
         display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
     }
 </style>

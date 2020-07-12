@@ -1,15 +1,10 @@
 <template>
-  <div class="front-page">
+  <div class="home-page">
       <div class="container">
-        <GlobalEvent @keyup.space="regeneratePalette"></GlobalEvent>
+        <GlobalEvent @keydown.space.prevent="regeneratePalette"></GlobalEvent>
         <NotificationCopied></NotificationCopied>
-
-        <h1>Color palette generator</h1>
-
         <PaletteGrid :colors="colors"></PaletteGrid>
-        <RegenerateButton @click.native="regeneratePalette">
-
-        </RegenerateButton>
+        <RegenerateButton @click.native="regeneratePalette"></RegenerateButton>
         <span class="btn-instructions">Or just press the "Spacebar" to generate new palettes.</span>
       </div>
   </div>
@@ -19,9 +14,9 @@
 // @ is an alias to /src
 import ColorScheme from 'color-scheme';
 import GlobalEvent from 'vue-global-events';
-import RegenerateButton from '../components/RegenerateButton.vue';
-import NotificationCopied from '../components/NotificationCopied.vue';
-import PaletteGrid from '../components/PaletteGrid.vue';
+import NotificationCopied from '@/components/NotificationCopied.vue';
+import PaletteGrid from '@/components/PaletteGrid.vue';
+import RegenerateButton from '@/components/RegenerateButton.vue';
 
 export default {
   name: 'Home',
@@ -48,8 +43,6 @@ export default {
       this.colors.forEach((color, index) => {
         this.$set(this.colors, index, `#${randomColors[index]}`);
       });
-
-      console.log(randomHue, this.colors);
     },
   },
   created() {
@@ -65,10 +58,6 @@ export default {
 </script>
 
 <style lang="scss">
-  .front-page {
-    padding: 150px 0 100px 0;
-  }
-
   .btn-instructions {
     display: block;
     text-align: center;

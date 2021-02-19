@@ -1,3 +1,3 @@
 # Palette VueJS
 
-Live [https://aiv.lt/palette/](https://aiv.lt/palette/).
+Live [https://vue-colorpalette-generator.vercel.app/](https://vue-colorpalette-generator.vercel.app/).
